@@ -3,12 +3,18 @@ function generateDesign() {
   let budget = document.getElementById("budget").value;
   let style = document.getElementById("style").value;
 
-  document.getElementById("result").innerHTML =
-    "AI Design Suggestion:<br><br>" +
-    "For a " + room + " room with budget " + budget +
-    " and " + style + " style:<br>" +
-    "• Use space-saving furniture<br>" +
-    "• Add modern lighting<br>" +
-    "• Choose matching colours<br>" +
-    "• Keep storage solutions";
+  document.getElementById("result").innerHTML = `
+  <h3>🏠 AI Design Plan</h3>
+  <b>Room:</b> ${room}<br>
+  <b>Budget:</b> ₹${budget}<br>
+  <b>Style:</b> ${style}<br><br>
+
+  🛋️ <b>Furniture:</b> Use space-saving furniture suitable for your room size.<br><br>
+
+  💡 <b>Lighting:</b> Add modern LED lighting for a premium look.<br><br>
+
+  🎨 <b>Colours:</b> Choose colours that match your ${style} theme.<br><br>
+
+  📦 <b>Storage:</b> Add smart storage solutions to save space.
+  `;
 }
