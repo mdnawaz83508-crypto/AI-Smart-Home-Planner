@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AI Smart Home Planner</title>
+    <title>AI Smart Home Planner</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
 <h1>🏠 AI Smart Home Planner</h1>
 
 <p>Enter your room details:</p>
 
-<input id="room" placeholder="Room size">
-<input id="budget" placeholder="Budget">
-<input id="style" placeholder="Design style">
+<input id="room" type="text" placeholder="Room size">
+<input id="budget" type="text" placeholder="Budget">
+<input id="style" type="text" placeholder="Design style">
 
-<button>Generate Design</button>
+<button onclick="generateDesign()">Generate Design</button>
 
 <h2>AI Suggestion:</h2>
-<p id="result">Your design will appear here.</p>
+
+<div id="result">
+Your design will appear here.
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
