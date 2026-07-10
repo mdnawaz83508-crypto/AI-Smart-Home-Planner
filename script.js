@@ -2,85 +2,41 @@ function searchAnything(){
 
 let question = document.getElementById("question").value;
 
-if(question.trim() === ""){
-    document.getElementById("result").innerHTML =
-    "❌ Enter your question first";
-    return;
+if(question==""){
+document.getElementById("result").innerHTML="Enter something";
+return;
 }
 
 
-let text = question.toLowerCase();
-
-let result = `
-<h3>🤖 AI Search Assistant</h3>
-<p>Your request:</p>
-<b>${question}</b>
-<br><br>
-`;
+document.getElementById("result").innerHTML =
+"Searching for: " + question;
 
 
-// Video search
-if(
-text.includes("video") ||
-text.includes("tutorial") ||
-text.includes("how") ||
-text.includes("making") ||
-text.includes("review") ||
-text.includes("vlog")
-){
+setTimeout(function(){
 
-result += `
-<button onclick="youtubeSearch()">
-🎬 Watch Videos
-</button>
-`;
-
-}
-
-// Image search
-else{
-
-result += `
-<button onclick="googleImageSearch()">
-🖼️ View Images
-</button>
-`;
-
-}
+let choice = confirm(
+"Open YouTube for videos? Press OK. Press Cancel for Images."
+);
 
 
-document.getElementById("result").innerHTML = result;
-
-}
-
-
-
-function youtubeSearch(){
-
-let question =
-document.getElementById("question").value;
-
+if(choice){
 
 window.open(
 "https://www.youtube.com/results?search_query=" +
-encodeURIComponent(question),
-"_blank"
+encodeURIComponent(question)
+);
+
+}
+else{
+
+window.open(
+"https://www.google.com/search?tbm=isch&q=" +
+encodeURIComponent(question)
 );
 
 }
 
+},500);
 
-
-function googleImageSearch(){
-
-let question =
-document.getElementById("question").value;
-
-
-window.open(
-"https://www.google.com/search?tbm=isch&q=" +
-encodeURIComponent(question),
-"_blank"
-);
 
 }
