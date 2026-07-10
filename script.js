@@ -1,85 +1,65 @@
-const furniture = [
-"Modern sofa with smart storage",
-"Wooden modular furniture",
-"Space saving table",
-"Luxury designer furniture",
-"Minimal furniture setup"
-];
+function searchAnything() {
 
-const lighting = [
-"Warm LED lights",
-"Smart ceiling lights",
-"Premium hanging lights",
-"Natural window lighting",
-"Hidden strip lights"
-];
+let question = document.getElementById("question").value;
 
-const colours = [
-"White and wooden theme",
-"Grey modern theme",
-"Beige luxury theme",
-"Blue relaxing theme",
-"Black and gold premium theme"
-];
+let text = question.toLowerCase();
 
+let result = `
+<h3>🤖 AI Assistant Result</h3>
+<p>You searched for:</p>
+<b>${question}</b>
+<br><br>
+`;
 
-function randomItem(array){
-return array[Math.floor(Math.random()*array.length)];
+if (
+text.includes("video") ||
+text.includes("how to") ||
+text.includes("tutorial") ||
+text.includes("review") ||
+text.includes("making")
+) {
+
+result += `
+<button onclick="openYouTube('${question}')">
+🎬 Watch Videos
+</button>
+`;
+
+}
+else {
+
+result += `
+<button onclick="openImages('${question}')">
+🖼️ View Images
+</button>
+`;
+
 }
 
-
-
-function generateDesign(){
-
-let room = document.getElementById("room").value;
-let budget = document.getElementById("budget").value;
-let style = document.getElementById("style").value;
-
-
-document.getElementById("result").innerHTML = `
-
-<h3>🤖 AI Home Design</h3>
-
-<b>Room:</b> ${room}<br>
-<b>Budget:</b> ₹${budget}<br>
-<b>Style:</b> ${style}<br><br>
-
-
-🛋️ Furniture:<br>
-${randomItem(furniture)}<br><br>
-
-💡 Lighting:<br>
-${randomItem(lighting)}<br><br>
-
-🎨 Colour:<br>
-${randomItem(colours)}
-
-`;
+document.getElementById("result").innerHTML = result;
 
 }
 
 
 
-function generateVideo(){
+function openYouTube(query){
 
-let idea = document.getElementById("videoIdea").value;
+window.open(
+"https://www.youtube.com/results?search_query=" +
+encodeURIComponent(query),
+"_blank"
+);
+
+}
 
 
-document.getElementById("videoResult").innerHTML = `
+function openImages(query){
 
-<h3>🎬 AI Video Concept</h3>
-
-Create a realistic cinematic video about:
-<br><br>
-
-${idea}
-
-<br><br>
-
-Camera: Professional movement<br>
-Quality: 4K realistic style
-
-`;
+window.open(
+"https://www.google.com/search?tbm=isch&q=" +
+encodeURIComponent(query),
+"_blank"
+);
 
 }
     
