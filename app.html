@@ -1,52 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AI Smart Home Planner</title>
-<link rel="stylesheet" href="style.css">
+    <title>AI Smart Assistant</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>🏠 AI Smart Home Planner</h1>
+<h1>🤖 AI Smart Assistant</h1>
 
 <div class="ai-boy">
-🤖 Hello! I am your AI Home Designer.<br>
-Enter details and I will create ideas for you.
+🤖 Hello! I am your AI assistant.<br><br>
+Ask me anything. I will find suitable videos or images for you.
 </div>
 
 
-<h2>🏡 Create Home Design</h2>
+<h2>Ask Your Question</h2>
 
-<input id="room" placeholder="Room size (example: 12x15 ft)">
+<input 
+id="question" 
+placeholder="Example: Modern bedroom design under 50000"
+>
 
-<input id="budget" placeholder="Budget (example: 50000)">
 
-<input id="style" placeholder="Style (Modern/Luxury/Simple)">
-
-<button onclick="generateDesign()">
-Generate Design
+<button onclick="searchAnything()">
+✨ Ask AI
 </button>
 
 
 <div id="result">
-Your AI design will appear here.
+Your answer will appear here.
 </div>
-
-
-
-<h2>🎬 AI Video Creator</h2>
-
-<input id="videoIdea" placeholder="Enter video idea">
-
-<button onclick="generateVideo()">
-Generate Video Idea
-</button>
-
-
-<div id="videoResult">
-Your video idea will appear here.
-</div>
-
 
 
 <script src="script.js"></script>
