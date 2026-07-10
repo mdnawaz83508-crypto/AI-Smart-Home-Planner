@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>AI Search Assistant</title>
-</head>
-
 <body>
 
-<h1>🤖 AI Search Assistant</h1>
+<h1>Test App</h1>
 
-<input type="text" id="question" placeholder="Ask anything">
+<input id="question" placeholder="Type something">
 
-<br><br>
-
-<button id="searchBtn">
-Search
+<button onclick="test()">
+CLICK ME
 </button>
 
-<p id="result">
-Waiting for your question...
-</p>
+<h3 id="result"></h3>
 
+<script>
+function test(){
 
-<script src="script.js"></script>
+let text = document.getElementById("question").value;
+
+document.getElementById("result").innerHTML =
+"You typed: " + text;
+
+}
+</script>
 
 </body>
 </html>
