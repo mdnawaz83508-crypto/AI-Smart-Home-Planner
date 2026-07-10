@@ -1,27 +1,27 @@
-<script>
-alert("HTML is running");
-
-function searchAnything(){
-    alert("Button works");
-}
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Search Assistant</title>
+</head>
 
 <body>
 
 <h1>🤖 AI Search Assistant</h1>
 
-<input id="question" placeholder="Ask anything">
+<input type="text" id="question" placeholder="Ask anything">
 
-<button onclick="searchAnything()">
+<br><br>
+
+<button id="searchBtn">
 Search
 </button>
 
-<div id="result">
-Result will appear here
-</div>
+<p id="result">
+Waiting for your question...
+</p>
 
-<script src="./script.js?v=2"></script>
 
+<script src="script.js"></script>
 
 </body>
 </html>
