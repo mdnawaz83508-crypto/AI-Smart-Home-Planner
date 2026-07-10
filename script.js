@@ -71,4 +71,3 @@ ${randomIdea(colourIdeas)}<br><br>
 ${randomIdea(storageIdeas)}
 
 `;
-}
