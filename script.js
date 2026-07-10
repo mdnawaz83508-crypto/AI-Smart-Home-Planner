@@ -1,5 +1,7 @@
-alert("JavaScript connected!");
+alert("NEW SCRIPT LOADED");
 
 function searchAnything(){
-    alert("Button is working!");
+
+alert("SEARCH BUTTON WORKING");
+
 }
