@@ -1,40 +1,53 @@
-function searchAnything() {
+function searchAnything(){
 
 let question = document.getElementById("question").value;
+
+if(question.trim() === ""){
+    document.getElementById("result").innerHTML =
+    "❌ Enter your question first";
+    return;
+}
+
 
 let text = question.toLowerCase();
 
 let result = `
-<h3>🤖 AI Assistant Result</h3>
-<p>You searched for:</p>
+<h3>🤖 AI Search Assistant</h3>
+<p>Your request:</p>
 <b>${question}</b>
 <br><br>
 `;
 
-if (
+
+// Video search
+if(
 text.includes("video") ||
-text.includes("how to") ||
 text.includes("tutorial") ||
+text.includes("how") ||
+text.includes("making") ||
 text.includes("review") ||
-text.includes("making")
-) {
+text.includes("vlog")
+){
 
 result += `
-<button onclick="openYouTube('${question}')">
+<button onclick="youtubeSearch()">
 🎬 Watch Videos
 </button>
 `;
 
 }
-else {
+
+// Image search
+else{
 
 result += `
-<button onclick="openImages('${question}')">
+<button onclick="googleImageSearch()">
 🖼️ View Images
 </button>
 `;
 
 }
+
 
 document.getElementById("result").innerHTML = result;
 
@@ -42,24 +55,32 @@ document.getElementById("result").innerHTML = result;
 
 
 
-function openYouTube(query){
+function youtubeSearch(){
+
+let question =
+document.getElementById("question").value;
+
 
 window.open(
 "https://www.youtube.com/results?search_query=" +
-encodeURIComponent(query),
+encodeURIComponent(question),
 "_blank"
 );
 
 }
 
 
-function openImages(query){
+
+function googleImageSearch(){
+
+let question =
+document.getElementById("question").value;
+
 
 window.open(
 "https://www.google.com/search?tbm=isch&q=" +
-encodeURIComponent(query),
+encodeURIComponent(question),
 "_blank"
 );
 
 }
-    
