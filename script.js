@@ -3,18 +3,31 @@ function generateDesign() {
   let budget = document.getElementById("budget").value;
   let style = document.getElementById("style").value;
 
+  let prompt =
+    "Modern interior design of a " + room +
+    " room, budget " + budget +
+    ", " + style +
+    " style, realistic 3D home design.";
+
   document.getElementById("result").innerHTML = `
-  <h3>🏠 AI Design Plan</h3>
-  <b>Room:</b> ${room}<br>
-  <b>Budget:</b> ₹${budget}<br>
-  <b>Style:</b> ${style}<br><br>
+  <h3>🏠 AI Design Suggestion</h3>
+  <p><b>Room:</b> ${room}</p>
+  <p><b>Budget:</b> ₹${budget}</p>
+  <p><b>Style:</b> ${style}</p>
 
-  🛋️ <b>Furniture:</b> Use space-saving furniture suitable for your room size.<br><br>
+  <h4>AI Image Prompt:</h4>
+  <p>${prompt}</p>
 
-  💡 <b>Lighting:</b> Add modern LED lighting for a premium look.<br><br>
-
-  🎨 <b>Colours:</b> Choose colours that match your ${style} theme.<br><br>
-
-  📦 <b>Storage:</b> Add smart storage solutions to save space.
+  <button onclick="generateImage('${prompt}')">
+  🖼️ Generate AI Room Image
+  </button>
   `;
+}
+
+function generateImage(prompt) {
+  let imageSearch = 
+  "https://www.google.com/search?tbm=isch&q=" 
+  + encodeURIComponent(prompt);
+
+  window.open(imageSearch, "_blank");
 }
