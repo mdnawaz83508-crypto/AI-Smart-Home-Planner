@@ -1,3 +1,4 @@
+alert("JS WORKING");
 function generateDesign() {
   let room = document.getElementById("room").value;
   let budget = document.getElementById("budget").value;
