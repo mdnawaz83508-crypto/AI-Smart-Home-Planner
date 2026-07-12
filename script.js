@@ -1,4 +1,4 @@
-// AI Smart Home Planner Script
+/ AI Smart Home Planner Script
 
 
 function generateDesign(){
