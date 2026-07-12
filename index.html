@@ -1,48 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AI Smart Home Planner</title>
+<title>AI Home Designer</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<h1>TEST UPDATE</h1>  
 
 <div class="container">
 
-<h1>🏠 AI Smart Home Planner</h1>
+<h1>🤖 AI Home Designer</h1>
 
-<p>Enter your room details:</p>
-
-<input id="room" placeholder="Room size or type">
-
-<input id="budget" placeholder="Budget">
-
-<input id="style" placeholder="Design style">
-
-<button onclick="generateDesign()">Generate Design</button>
-
-<h2>AI Suggestion:</h2>
-
-<div id="result">
-Your design will appear here.
+<div class="ai">
+🤖 Hello! I am your AI home design assistant.
+<br><br>
+Tell me your room size, budget and style.
 </div>
 
 
-<h2>🏠 House Design Prompt</h2>
-
-<textarea id="housePrompt" placeholder="Describe your dream house"></textarea>
-
-<button onclick="createPrompt()">Create AI Prompt</button>
-
-<p id="promptResult"></p>
+<input 
+id="question" 
+placeholder="Example: 12x15 living room, budget 50000, modern style"
+>
 
 
-<h2>🖼 Google Images</h2>
+<button id="btn">
+✨ Generate Design
+</button>
 
-<input id="imageSearch" placeholder="Search house images">
 
-<button onclick="openImages()">Search Images</button>
+<div id="result">
+Your AI design will appear here...
+</div>
 
 </div>
 
@@ -50,4 +39,4 @@ Your design will appear here.
 <script src="script.js"></script>
 
 </body>
-</html>   
+</html>
