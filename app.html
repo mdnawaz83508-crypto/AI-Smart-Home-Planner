@@ -1,27 +1,86 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <title>AI Smart Home App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
 <body>
 
-<h1>Test App</h1>
+<h1>🏠 AI Smart Home Planner</h1>
 
-<input id="question" placeholder="Type something">
 
-<button onclick="test()">
-CLICK ME
+<div class="container">
+
+
+<h2>Room Design</h2>
+
+<input id="room" type="text" placeholder="Enter room name">
+
+<input id="budget" type="text" placeholder="Enter budget">
+
+<input id="style" type="text" placeholder="Enter design style">
+
+
+<button onclick="generateDesign()">
+Generate Design
 </button>
 
-<h3 id="result"></h3>
 
-<script>
-function test(){
+<h2>AI Suggestion</h2>
 
-let text = document.getElementById("question").value;
+<div id="result">
+Your design will appear here...
+</div>
 
-document.getElementById("result").innerHTML =
-"You typed: " + text;
 
-}
-</script>
+
+<h2>AI House Design Prompt</h2>
+
+<textarea id="housePrompt"
+placeholder="Describe your dream house..."></textarea>
+
+
+<button onclick="createPrompt()">
+Create AI Prompt
+</button>
+
+
+<div id="promptResult"></div>
+
+
+
+<h2>YouTube House Design Videos</h2>
+
+<input id="youtubeSearch"
+placeholder="Search videos">
+
+
+<button onclick="openYoutube()">
+Search YouTube
+</button>
+
+
+
+<h2>Google House Images</h2>
+
+<input id="imageSearch"
+placeholder="Search images">
+
+
+<button onclick="openImages()">
+Search Images
+</button>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
