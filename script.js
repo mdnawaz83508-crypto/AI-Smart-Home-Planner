@@ -1,87 +1,93 @@
-/ AI Smart Home Planner Script
+// AI Smart Home Planner
 
 
-function generateDesign(){
+function generateDesign() {
 
     let room = document.getElementById("room").value;
     let budget = document.getElementById("budget").value;
     let style = document.getElementById("style").value;
 
-    let result = `
-    🏠 AI Home Design Suggestion
+    let result = document.getElementById("result");
 
-    Room: ${room}
 
-    Budget: ${budget}
+    if (room === "" || budget === "" || style === "") {
+        result.innerHTML = "Please enter all details.";
+        return;
+    }
 
-    Style: ${style}
 
-    Design Idea:
-    Create a modern ${style} ${room} design with smart home technology,
-    beautiful lighting, comfortable furniture, premium materials,
-    and a realistic 3D architectural view.
-    `;
-
-    document.getElementById("result").innerHTML = result;
-
+    result.innerHTML =
+    "🏠 AI Design Suggestion<br><br>" +
+    "Room: " + room + "<br>" +
+    "Budget: ₹" + budget + "<br>" +
+    "Style: " + style + "<br><br>" +
+    "Create a beautiful " + style + " " + room +
+    " with smart home technology, modern furniture, " +
+    "premium lighting and realistic 3D design.";
 }
 
 
 
-// House design prompt generator
 
-function createPrompt(){
+function createPrompt() {
 
-    let text = document.getElementById("housePrompt").value;
+    let house = document.getElementById("housePrompt").value;
 
-    let prompt = `
-    🏠 AI Image Design Prompt:
+    let output = document.getElementById("promptResult");
 
-    Create a realistic 3D house design based on:
-    ${text}
 
-    Include:
-    - Modern architecture
-    - Smart home technology
-    - Luxury interior
-    - Beautiful garden
-    - Glass windows
-    - Professional lighting
-    - High quality architectural visualization
-    `;
+    if (house === "") {
+        output.innerHTML = "Please enter house description.";
+        return;
+    }
 
-    document.getElementById("promptResult").innerHTML = prompt;
 
+    output.innerHTML =
+    "✨ AI Prompt:<br><br>" +
+    "Create a realistic 3D house design of " +
+    house +
+    ". Add modern architecture, smart home features, " +
+    "luxury interior, garden, glass windows and beautiful lighting.";
 }
 
 
 
-// YouTube search
 
-function openYoutube(){
 
-    let search = document.getElementById("youtubeSearch").value;
+function openYoutube() {
 
-    let link = 
-    "https://www.youtube.com/results?search_query=" 
-    + encodeURIComponent(search);
+    let video = document.getElementById("youtubeSearch").value;
 
-    window.open(link, "_blank");
 
+    if (video === "") {
+        alert("Enter video search");
+        return;
+    }
+
+
+    window.open(
+        "https://www.youtube.com/results?search_query=" +
+        encodeURIComponent(video)
+    );
 }
 
 
 
-// Google image search
 
-function openImages(){
 
-    let search = document.getElementById("imageSearch").value;
+function openImages() {
 
-    let link =
-    "https://www.google.com/search?tbm=isch&q="
-    + encodeURIComponent(search);
+    let image = document.getElementById("imageSearch").value;
 
-    window.open(link, "_blank");
 
+    if (image === "") {
+        alert("Enter image search");
+        return;
+    }
+
+
+    window.open(
+        "https://www.google.com/search?tbm=isch&q=" +
+        encodeURIComponent(image)
+    );
 }
