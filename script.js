@@ -1,4 +1,4 @@
-function generateDesign(){
+document.getElementById("btn").onclick = function(){
 
 let details = document.getElementById("question").value;
 
@@ -6,76 +6,41 @@ let details = document.getElementById("question").value;
 if(details.trim() === ""){
 
 document.getElementById("result").innerHTML =
-"❌ Please enter your home details";
+"❌ Enter details first";
 
 return;
 
 }
 
 
-let designs = [
+document.getElementById("result").innerHTML =
 
-"🏠 Modern Minimalist Home",
-"🛋️ Luxury Living Room Design",
-"🛏️ Smart Bedroom Interior",
-"🍳 Modular Kitchen Concept",
-"🌿 Eco Friendly Home Design",
-"💡 Premium Lighting Setup",
-"🪑 Space Saving Furniture Layout",
-"🎨 Elegant Colour Combination",
-"🏡 Smart Home Automation Idea",
-"🌆 Contemporary Apartment Style"
+`
+<h2>🤖 AI Design</h2>
 
-];
+🏠 Home Idea Generated
 
+<br><br>
 
-let idea =
-designs[Math.floor(Math.random()*designs.length)];
-
-
-let prompt = `
-
-🏠 AI HOME DESIGN RESULT
-
-${idea}
-
-
-📐 User Requirements:
+📐 Details:
 ${details}
 
+<br><br>
 
-✨ AI Suggestions:
+🛋️ Furniture: Modern space saving furniture
 
-🛋️ Furniture:
-Use space-saving and stylish furniture placement.
+<br>
 
-💡 Lighting:
-Add modern LED lighting with natural light balance.
+💡 Lighting: Premium LED lighting
 
-🎨 Colours:
-Choose matching premium colour combinations.
+<br>
 
-🌿 Decoration:
-Add plants, artwork and smart storage.
+🎨 Style: Beautiful colour combination
 
-📱 Smart Features:
-Add modern home technology.
+<br>
 
-🎬 Visualization Prompt:
-
-Create a realistic 4K architectural visualization of this home,
-professional interior design,
-realistic materials,
-cinematic lighting,
-modern furniture,
-luxury appearance.
+🌿 Decoration: Plants and smart storage
 
 `;
 
-
-document.getElementById("result").innerHTML =
-"<h2>🤖 AI Designer</h2><p>"
-+ prompt.replace(/\n/g,"<br>")
-+ "</p>";
-
-}
+};
