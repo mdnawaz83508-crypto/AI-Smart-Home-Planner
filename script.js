@@ -1,40 +1,85 @@
-document.getElementById("searchBtn").onclick = function(){
-
-let question = document.getElementById("question").value;
+// AI Smart Home Planner
 
 
-if(question.trim() === ""){
-document.getElementById("result").innerHTML =
-"Please enter something";
-return;
+function generateDesign(){
+
+let room = document.getElementById("room").value;
+let budget = document.getElementById("budget").value;
+let style = document.getElementById("style").value;
+
+
+let result = `
+🏠 AI Home Design Suggestion
+
+Room: ${room}
+
+Budget: ${budget}
+
+Style: ${style}
+
+Design Idea:
+Create a modern ${style} ${room} design with smart home technology,
+beautiful lighting, comfortable furniture, premium materials,
+and a realistic 3D architectural view.
+`;
+
+
+document.getElementById("result").innerHTML = result;
+
 }
 
 
-document.getElementById("result").innerHTML =
-"Searching: " + question;
+
+// Create AI image prompt
+
+function createPrompt(){
+
+let text = document.getElementById("housePrompt").value;
 
 
-// Open YouTube or Google Images
+document.getElementById("promptResult").innerHTML =
 
-let choice = confirm(
-"Press OK for YouTube videos\nPress Cancel for Google Images"
-);
+"AI Image Prompt:<br><br>" +
+
+"Create a realistic 3D house design based on: " 
++ text +
+". Include modern architecture, smart home features, luxury interior, garden, beautiful lighting and professional visualization.";
+
+}
 
 
-if(choice){
 
-window.location.href =
+// Search YouTube videos
+
+function openYoutube(){
+
+let search = document.getElementById("youtubeSearch").value;
+
+
+let url =
 "https://www.youtube.com/results?search_query="
-+ encodeURIComponent(question);
++ encodeURIComponent(search);
+
+
+window.open(url,"_blank");
 
 }
-else{
 
-window.location.href =
+
+
+// Search Google Images
+
+function openImages(){
+
+let search =
+document.getElementById("imageSearch").value;
+
+
+let url =
 "https://www.google.com/search?tbm=isch&q="
-+ encodeURIComponent(question);
++ encodeURIComponent(search);
+
+
+window.open(url,"_blank");
 
 }
-
-
-};
