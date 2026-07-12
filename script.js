@@ -1,85 +1,87 @@
-// AI Smart Home Planner
+// AI Smart Home Planner Script
 
 
 function generateDesign(){
 
-let room = document.getElementById("room").value;
-let budget = document.getElementById("budget").value;
-let style = document.getElementById("style").value;
+    let room = document.getElementById("room").value;
+    let budget = document.getElementById("budget").value;
+    let style = document.getElementById("style").value;
 
+    let result = `
+    🏠 AI Home Design Suggestion
 
-let result = `
-🏠 AI Home Design Suggestion
+    Room: ${room}
 
-Room: ${room}
+    Budget: ${budget}
 
-Budget: ${budget}
+    Style: ${style}
 
-Style: ${style}
+    Design Idea:
+    Create a modern ${style} ${room} design with smart home technology,
+    beautiful lighting, comfortable furniture, premium materials,
+    and a realistic 3D architectural view.
+    `;
 
-Design Idea:
-Create a modern ${style} ${room} design with smart home technology,
-beautiful lighting, comfortable furniture, premium materials,
-and a realistic 3D architectural view.
-`;
-
-
-document.getElementById("result").innerHTML = result;
+    document.getElementById("result").innerHTML = result;
 
 }
 
 
 
-// Create AI image prompt
+// House design prompt generator
 
 function createPrompt(){
 
-let text = document.getElementById("housePrompt").value;
+    let text = document.getElementById("housePrompt").value;
 
+    let prompt = `
+    🏠 AI Image Design Prompt:
 
-document.getElementById("promptResult").innerHTML =
+    Create a realistic 3D house design based on:
+    ${text}
 
-"AI Image Prompt:<br><br>" +
+    Include:
+    - Modern architecture
+    - Smart home technology
+    - Luxury interior
+    - Beautiful garden
+    - Glass windows
+    - Professional lighting
+    - High quality architectural visualization
+    `;
 
-"Create a realistic 3D house design based on: " 
-+ text +
-". Include modern architecture, smart home features, luxury interior, garden, beautiful lighting and professional visualization.";
+    document.getElementById("promptResult").innerHTML = prompt;
 
 }
 
 
 
-// Search YouTube videos
+// YouTube search
 
 function openYoutube(){
 
-let search = document.getElementById("youtubeSearch").value;
+    let search = document.getElementById("youtubeSearch").value;
 
+    let link = 
+    "https://www.youtube.com/results?search_query=" 
+    + encodeURIComponent(search);
 
-let url =
-"https://www.youtube.com/results?search_query="
-+ encodeURIComponent(search);
-
-
-window.open(url,"_blank");
+    window.open(link, "_blank");
 
 }
 
 
 
-// Search Google Images
+// Google image search
 
 function openImages(){
 
-let search =
-document.getElementById("imageSearch").value;
+    let search = document.getElementById("imageSearch").value;
 
+    let link =
+    "https://www.google.com/search?tbm=isch&q="
+    + encodeURIComponent(search);
 
-let url =
-"https://www.google.com/search?tbm=isch&q="
-+ encodeURIComponent(search);
-
-
-window.open(url,"_blank");
+    window.open(link, "_blank");
 
 }
