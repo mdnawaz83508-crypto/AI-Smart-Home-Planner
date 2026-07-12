@@ -1,68 +1,81 @@
 function generateDesign(){
 
-let room = document.getElementById("room").value;
-let budget = document.getElementById("budget").value;
-let style = document.getElementById("style").value;
+let details = document.getElementById("question").value;
 
 
-document.getElementById("result").innerHTML = `
+if(details.trim() === ""){
 
-🏠 AI Home Design Suggestion
+document.getElementById("result").innerHTML =
+"❌ Please enter your home details";
 
-<br><br>
+return;
 
-Room: ${room}
+}
 
-<br>
 
-Budget: ₹${budget}
+let designs = [
 
-<br>
+"🏠 Modern Minimalist Home",
+"🛋️ Luxury Living Room Design",
+"🛏️ Smart Bedroom Interior",
+"🍳 Modular Kitchen Concept",
+"🌿 Eco Friendly Home Design",
+"💡 Premium Lighting Setup",
+"🪑 Space Saving Furniture Layout",
+"🎨 Elegant Colour Combination",
+"🏡 Smart Home Automation Idea",
+"🌆 Contemporary Apartment Style"
 
-Style: ${style}
+];
 
-<br><br>
 
-Design Idea:
+let idea =
+designs[Math.floor(Math.random()*designs.length)];
 
-<br>
 
-Create a modern ${style} house design with smart lighting,
-beautiful furniture, premium materials and realistic 3D architecture.
+let prompt = `
+
+🏠 AI HOME DESIGN RESULT
+
+${idea}
+
+
+📐 User Requirements:
+${details}
+
+
+✨ AI Suggestions:
+
+🛋️ Furniture:
+Use space-saving and stylish furniture placement.
+
+💡 Lighting:
+Add modern LED lighting with natural light balance.
+
+🎨 Colours:
+Choose matching premium colour combinations.
+
+🌿 Decoration:
+Add plants, artwork and smart storage.
+
+📱 Smart Features:
+Add modern home technology.
+
+🎬 Visualization Prompt:
+
+Create a realistic 4K architectural visualization of this home,
+professional interior design,
+realistic materials,
+cinematic lighting,
+modern furniture,
+luxury appearance.
 
 `;
 
-}
 
-
-
-function createPrompt(){
-
-let text = document.getElementById("housePrompt").value;
-
-
-document.getElementById("promptResult").innerHTML =
-
-"AI Image Prompt:<br><br>" +
-
-"Create a realistic modern house design. " + text +
-
-". Add beautiful lighting, luxury furniture and architectural details.";
-
-}
-
-
-
-
-function openImages(){
-
-let search = document.getElementById("imageSearch").value;
-
-
-window.open(
-
-"https://www.google.com/search?tbm=isch&q=" + search
-
-);
+document.getElementById("result").innerHTML =
+"<h2>🤖 AI Designer</h2><p>"
++ prompt.replace(/\n/g,"<br>")
++ "</p>";
 
 }
