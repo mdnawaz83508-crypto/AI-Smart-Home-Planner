@@ -1,86 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AI Smart Home Planner</title>
-
-    <link rel="stylesheet" href="style.css">
+<title>AI Smart Home Planner</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <h1>🏠 AI Smart Home Planner</h1>
+<div class="container">
+
+<h1>🏠 AI Smart Home Planner</h1>
+
+<p>Enter your room details:</p>
+
+<input id="room" placeholder="Room size or type">
+
+<input id="budget" placeholder="Budget">
+
+<input id="style" placeholder="Design style">
+
+<button onclick="generateDesign()">Generate Design</button>
+
+<h2>AI Suggestion:</h2>
+
+<div id="result">
+Your design will appear here.
+</div>
 
 
-    <div class="container">
+<h2>🏠 House Design Prompt</h2>
 
-        <p>Enter your room details:</p>
+<textarea id="housePrompt" placeholder="Describe your dream house"></textarea>
 
-        <input id="room" type="text" placeholder="Room name">
+<button onclick="createPrompt()">Create AI Prompt</button>
 
-        <input id="budget" type="text" placeholder="Budget">
-
-        <input id="style" type="text" placeholder="Design style">
+<p id="promptResult"></p>
 
 
-        <button onclick="generateDesign()">
-            Generate Design
-        </button>
+<h2>🖼 Google Images</h2>
+
+<input id="imageSearch" placeholder="Search house images">
+
+<button onclick="openImages()">Search Images</button>
+
+</div>
 
 
-        <h2>AI Suggestion:</h2>
-
-        <div id="result">
-            Your design will appear here.
-        </div>
-
-
-
-        <h2>🏠 House Design Prompt</h2>
-
-        <textarea id="housePrompt" placeholder="Describe your dream house design..."></textarea>
-
-
-        <button onclick="createPrompt()">
-            Create AI Prompt
-        </button>
-
-
-        <div id="promptResult">
-        </div>
-
-
-
-        <h2>▶️ YouTube AI Design Videos</h2>
-
-        <input id="youtubeSearch" type="text" placeholder="Search house design videos">
-
-
-        <button onclick="openYoutube()">
-            Search YouTube
-        </button>
-
-
-
-        <h2>🖼️ Google Images</h2>
-
-        <input id="imageSearch" type="text" placeholder="Search house images">
-
-
-        <button onclick="openImages()">
-            Search Images
-        </button>
-
-    </div>
-
-
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
-
-</html>
+</html>   
