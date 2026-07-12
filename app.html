@@ -1,71 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>AI Smart Home Planner App</title>
-    <link rel="stylesheet" href="style.css">
+<title>AI Home Designer</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-<h1>🏠 AI Smart Home Planner</h1>
-
-
 <div class="container">
 
-    <h2>Enter Your Room Details</h2>
+<h1>🤖 AI Home Designer</h1>
 
-    <input id="room" type="text" placeholder="Room name (Bedroom, Kitchen, etc.)">
+<div class="ai">
+🤖 Hello! I am your AI home design assistant.
+<br>
+Tell me your room details and I will create ideas.
+</div>
 
-    <input id="budget" type="text" placeholder="Budget">
-
-    <input id="style" type="text" placeholder="Design style (Modern, Luxury, Minimalist)">
-
-
-    <button onclick="generateDesign()">
-        Generate Design
-    </button>
+<input id="question" placeholder="Example: 12x15 living room, budget 50000, modern style">
 
 
-    <h2>AI Suggestion</h2>
-
-    <div id="result">
-        Your design will appear here.
-    </div>
+<button onclick="generateDesign()">
+✨ Generate Design
+</button>
 
 
-
-    <h2>🏠 House Design Prompt</h2>
-
-    <textarea id="housePrompt" placeholder="Describe your dream house..."></textarea>
-
-    <button onclick="createPrompt()">
-        Create AI Prompt
-    </button>
-
-    <p id="promptResult"></p>
-
-
-
-    <h2>▶️ YouTube AI Design Videos</h2>
-
-    <input id="youtubeSearch" placeholder="Search house design videos">
-
-    <button onclick="openYoutube()">
-        Search YouTube
-    </button>
-
-
-
-    <h2>🖼️ Google Images</h2>
-
-    <input id="imageSearch" placeholder="Search house images">
-
-    <button onclick="openImages()">
-        Search Images
-    </button>
-
+<div id="result">
+Your AI design will appear here...
+</div>
 
 </div>
 
@@ -73,5 +35,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>
